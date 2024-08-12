@@ -3,6 +3,9 @@ import mainImage from './assets/homePage.svg'
 
 export default function App() {
   return (
+    <body>
+      
+    
     <div className="bg-DarkBlue">
       {/* Header */}
       <header className="bg-WhiteHeader shadow">
@@ -33,7 +36,7 @@ export default function App() {
       </header>
 
       {/* Main Section */}
-      <main className="bg-blue-900 text-white py-20">
+      <main className="bg-blue-900 text-white py-20 h-screen">
         <div className="container mx-auto flex flex-col md:flex-row items-center px-8">
           {/* Text Section */}
           <div className="md:w-1/2 mb-10 md:mb-0">
@@ -52,13 +55,7 @@ export default function App() {
           </div>
         </div>
       </main>
-
-      {/* Footer (Se necessário, ou pode ser deixado em branco) */}
-      <footer className="bg-gray-50 text-center py-4">
-        <p className="text-WhiteHeader text-xl font-bold">
-          A segurança que eles merecem, ao alcance de um toque.
-        </p>
-      </footer>
     </div>
+  </body>
   )
 }

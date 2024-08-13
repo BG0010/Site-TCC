@@ -20,16 +20,16 @@ export default function App() {
           {/* Navegação*/}
           <nav>
             <ul className="flex space-x-10 text-buttonHome uppercase text-sm font-medium tracking-wide">
-              <li className="hover:text-blue-700">
+              <li className="hover:text-DarkBlue">
                 <Link to="Material">Material</Link>
               </li>
-              <li className="hover:text-blue-700">
+              <li className="hover:text-DarkBlue">
                 <a href="#">Funcionamento</a>
               </li>
-              <li className="hover:text-blue-700">
+              <li className="hover:text-DarkBlue">
                 <a href="#">Integrantes</a>
               </li>
-              <li className="hover:text-blue-700">
+              <li className="hover:text-DarkBlue">
                 <a href="#">Artigos</a>
               </li>
             </ul>

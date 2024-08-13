@@ -10,7 +10,8 @@ export default {
     colors: {
       'buttonHome': '#19428E',
       'DarkBlue': '#041128',
-      'WhiteHeader': '#F9FBF2'
+      'WhiteHeader': '#F9FBF2',
+      'LightBlue': '#AFCBFF'
     },
   },
   plugins: [],

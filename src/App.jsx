@@ -1,8 +1,13 @@
 import logo from './assets/logo.svg'
 import mainImage from './assets/homePage.svg' 
+import { Link } from 'react-router-dom'
+import Material from './Material'
 
 export default function App() {
   return (
+    <body>
+      
+    
     <div className="bg-DarkBlue">
       {/* Header */}
       <header className="bg-WhiteHeader shadow">
@@ -16,7 +21,7 @@ export default function App() {
           <nav>
             <ul className="flex space-x-10 text-buttonHome uppercase text-sm font-medium tracking-wide">
               <li className="hover:text-blue-700">
-                <a href="#">Material</a>
+                <Link to="Material">Material</Link>
               </li>
               <li className="hover:text-blue-700">
                 <a href="#">Funcionamento</a>
@@ -33,7 +38,7 @@ export default function App() {
       </header>
 
       {/* Main Section */}
-      <main className="bg-blue-900 text-white py-20">
+      <main className="bg-blue-900 text-white py-20 h-screen">
         <div className="container mx-auto flex flex-col md:flex-row items-center px-8">
           {/* Text Section */}
           <div className="md:w-1/2 mb-10 md:mb-0">
@@ -52,13 +57,7 @@ export default function App() {
           </div>
         </div>
       </main>
-
-      {/* Footer (Se necessário, ou pode ser deixado em branco) */}
-      <footer className="bg-gray-50 text-center py-4">
-        <p className="text-WhiteHeader text-xl font-bold">
-          A segurança que eles merecem, ao alcance de um toque.
-        </p>
-      </footer>
     </div>
+  </body>
   )
 }

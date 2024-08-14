@@ -12,6 +12,7 @@ import Material from './Material.jsx'
 import App from './App.jsx'
 import Funcionamento from './Funcionamento.jsx'
 import Integrantes from './Integrantes.jsx'
+import Artigo from './Artigo.jsx'
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: 'integrantes',
     element: <Integrantes/>
+  },
+  {
+    path: 'artigo',
+    element: <Artigo/>
   }
 ])
 

@@ -31,19 +31,20 @@ const integrantes = [
 
 const Integrantes = () => {
   return (
-    <div className="bg-DarkBlue h-screen text-WhiteHeader">
+    <div className="bg-DarkBlue min-h-screen text-WhiteHeader flex flex-col">
+      {/* Header */}
       <header className="bg-WhiteHeader shadow">
-        <div className="container mx-auto flex justify-between items-center py-4 px-8">
+        <div className="container mx-auto flex justify-between items-center py-4 px-4 md:px-8">
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/">
-              <img src={logo} alt="Logo" className="h-16 w-auto" />
+              <img src={logo} alt="Logo" className="h-12 md:h-16 w-auto" />
             </Link>
           </div>
 
           {/* Navegação */}
           <nav>
-            <ul className="flex space-x-10 uppercase text-sm text-buttonHome font-medium tracking-wide">
+            <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-10 text-buttonHome uppercase text-xs md:text-sm font-medium tracking-wide">
               <li className="hover:text-DarkBlue">
                 <Link to="/material">Material</Link>
               </li>
@@ -54,16 +55,17 @@ const Integrantes = () => {
                 <Link to="/integrantes">Integrantes</Link>
               </li>
               <li className="hover:text-DarkBlue">
-                <a href="#">Artigos</a>
+                <Link to='/artigo'>Artigo</Link>
               </li>
             </ul>
           </nav>
         </div>
       </header>
 
-      <div className="bg-blue-900 text-white py-10">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
+      {/* Integrantes Section */}
+      <div className="bg-blue-900 text-white py-10 flex-1">
+        <div className="container mx-auto px-4">
+          <div className="grid gap-8 md:grid-cols-3">
             {integrantes.map((integrante, index) => (
               <div
                 key={index}
@@ -72,10 +74,9 @@ const Integrantes = () => {
                 <img
                   src={integrante.imagem}
                   alt={integrante.nome}
-                  className="rounded-full mx-auto mb-4"
-                  style={{ width: "150px", height: "150px" }}
+                  className="rounded-full mx-auto mb-4 w-24 h-24 md:w-36 md:h-36 object-cover"
                 />
-                <h2 className="text-2xl font-bold mb-2">{integrante.nome}</h2>
+                <h2 className="text-xl md:text-2xl font-bold mb-2">{integrante.nome}</h2>
                 <p className="mb-2">Idade : {integrante.idade}</p>
                 <p className="italic mb-4">"{integrante.frase}"</p>
                 <div className="flex justify-center space-x-4">

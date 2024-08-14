@@ -1,4 +1,3 @@
-// src/Material.jsx
 import React from 'react';
 import logo from './assets/logo.svg';
 import { Link } from 'react-router-dom';
@@ -21,10 +20,10 @@ export default function Material() {
                 <Link to="/material">Material</Link>
               </li>
               <li className="hover:text-DarkBlue">
-                <a href="#">Funcionamento</a>
+                <Link to='/funcionamento'>Funcionamento</Link>
               </li>
               <li className="hover:text-DarkBlue">
-                <a href="#">Integrantes</a>
+                <Link to='/integrantes'>Integrantes</Link>
               </li>
               <li className="hover:text-DarkBlue">
                 <a href="#">Artigos</a>
@@ -54,12 +53,6 @@ export default function Material() {
           </div>
         </div>
       </main>
-
-      <footer className="w-full bg-gray-100 py-4">
-        <div className="max-w-6xl mx-auto flex justify-center">
-          
-        </div>
-      </footer>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import logo from './assets/logo.svg'
 import mainImage from './assets/homePage.svg' 
 import { Link } from 'react-router-dom'
-import Material from './Material'
+
 
 export default function App() {
   return (
@@ -24,10 +24,10 @@ export default function App() {
                 <Link to="Material">Material</Link>
               </li>
               <li className="hover:text-DarkBlue">
-                <a href="#">Funcionamento</a>
+                <Link to='/funcionamento'>Funcionamento</Link>
               </li>
               <li className="hover:text-DarkBlue">
-                <a href="#">Integrantes</a>
+                <Link to='/integrantes'>Integrantes</Link>
               </li>
               <li className="hover:text-DarkBlue">
                 <a href="#">Artigos</a>

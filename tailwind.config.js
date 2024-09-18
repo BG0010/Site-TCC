@@ -11,7 +11,8 @@ export default {
       'buttonHome': '#19428E',
       'DarkBlue': '#041128',
       'WhiteHeader': '#F9FBF2',
-      'LightBlue': '#AFCBFF'
+      'LightBlue': '#AFCBFF',
+      'CardArtigo': '#0b2545',
     },
   },
   plugins: [],

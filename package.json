@@ -10,9 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.7",
+    "phosphor-react": "^1.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.0"
+    "react-router-dom": "^6.26.0",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
+    "tcc": "file:"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",

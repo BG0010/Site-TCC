@@ -1,9 +1,33 @@
-import React from 'react';
-import logo from './assets/logo.svg';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import material from './assets/material.svg';
+import Slider from 'react-slick';
+import logo from './assets/logo.svg';
+import component1 from './assets/arduino.jpeg'; // substitua com o caminho real
+import component2 from './assets/gps.jpeg'; // substitua com o caminho real
+import component3 from './assets/botao.jpeg'; // substitua com o caminho real
+import component4 from './assets/bluetooth.jpeg'; // substitua com o caminho real
+
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Material() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-DarkBlue">
       <header className="bg-WhiteHeader shadow">
@@ -15,8 +39,28 @@ export default function Material() {
             </Link>
           </div>
 
+          {/* Hamburger Button */}
+          <div className="md:hidden">
+            <button onClick={toggleMenu} className="text-DarkBlue focus:outline-none">
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+                />
+              </svg>
+            </button>
+          </div>
+
           {/* Navegação */}
-          <nav>
+          <nav className={`${isOpen ? "block" : "hidden"} md:block`}>
             <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-10 uppercase text-xs md:text-sm text-buttonHome font-medium tracking-wide">
               <li className="hover:text-DarkBlue">
                 <Link to="/material">Material</Link>
@@ -44,14 +88,27 @@ export default function Material() {
             <ul className="space-y-2 list-disc list-inside text-LightBlue">
               <li>Uno R3 SMD CH340;</li>
               <li>Módulo GPS NEO-6M com antena;</li>
-              <li>Chave Botão PBS-29;</li>
-              <li>Adaptador Bateria 9v com Plug;</li>
+              <li>Chave Botão PBS-29;</li>       
               <li>Módulo Bluetooth HC-05;</li>
-              <li>Mini Protoboard 170 pontos.</li>
             </ul>
           </div>
+
+          {/* Slider de Imagens */}
           <div className="lg:w-1/2 flex justify-center mt-6 lg:mt-0">
-            <img src={material} alt="Imagem Mãos" className="w-full max-w-xs md:max-w-md object-cover" />
+            <Slider {...settings} className="w-full max-w-xs md:max-w-md">
+              <div>
+                <img src={component1} alt="Componente 1" className="w-full h-128 object-cover" />
+              </div>
+              <div>
+                <img src={component2} alt="Componente 2" className="w-full h-128 object-cover" />
+              </div>
+              <div>
+                <img src={component3} alt="Componente 3" className="w-full h-128 object-cover" />
+              </div>
+              <div>
+                <img src={component4} alt="Componente 4" className="w-full h-128 object-cover" />
+              </div>
+            </Slider>
           </div>
         </div>
       </main>

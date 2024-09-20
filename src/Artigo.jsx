@@ -68,8 +68,8 @@ export default function Artigo() {
           </div>
 
           {/* Navegação */}
-          <nav className={`flex flex-col md:flex-row md:space-x-10 ${isOpen ? "block" : "hidden"} md:block`}>
-            <ul className="space-y-2 md:space-y-0 flex flex-col md:flex-row text-buttonHome uppercase text-xs md:text-sm font-medium tracking-wide">
+          <nav className={`flex flex-col md:flex-row md:space-x-16 ${isOpen ? "block" : "hidden"} md:block`}>
+            <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-10 text-buttonHome uppercase text-xs md:text-sm font-medium tracking-wide">
               <li className="hover:text-DarkBlue">
                 <Link to="/material">Material</Link>
               </li>

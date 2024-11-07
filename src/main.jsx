@@ -13,6 +13,7 @@ import App from './App.jsx'
 import Funcionamento from './Funcionamento.jsx'
 import Integrantes from './Integrantes.jsx'
 import Artigo from './Artigo.jsx'
+import Videos from './Videos.jsx'
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: 'artigo',
     element: <Artigo/>
+  },
+  {
+    path: 'videos',
+    element: <Videos/>
   }
 ])
 

@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import logo from './assets/logo.svg';
-import mainImage from './assets/homePage.svg'; 
 import { Link } from 'react-router-dom';
 
-export default function App() {
+export default function Videos() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  // Exemplo de dados dos vídeos
+  const videoList = [
+    { id: 1, title: "Jogo", url: "https://www.youtube.com/watch?v=er57Ns_HW8c" },
+    { id: 2, title: "BEI", url: "https://www.youtube.com/watch?v=gaQqsSezXJ4" },
+  ];
 
   return (
     <div className="bg-DarkBlue min-h-screen flex flex-col">
@@ -16,9 +21,9 @@ export default function App() {
       <header className="bg-WhiteHeader shadow">
         <div className="container mx-auto flex justify-between items-center py-4 px-4 md:px-8 max-w-7xl">
           {/* Logo */}
-          <div className="flex items-center">
-            <img src={logo} alt="Logo" className="h-12 md:h-16 w-auto" />
-          </div>
+            <Link to="/">
+              <img src={logo} alt="Logo" className="h-12 md:h-16 w-auto" />
+            </Link>
 
           {/* Hamburger Button */}
           <div className="md:hidden">
@@ -40,20 +45,20 @@ export default function App() {
             </button>
           </div>
 
-          {/* Navegação*/}
+          {/* Navegação */}
           <nav className={`${isOpen ? "block" : "hidden"} md:block`}>
             <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-10 text-buttonHome uppercase text-xs md:text-sm font-medium tracking-wide">
               <li className="hover:text-DarkBlue">
-                <Link to="Material">Material</Link>
+                <Link to="/material">Material</Link>
               </li>
               <li className="hover:text-DarkBlue">
-                <Link to='/funcionamento'>Funcionamento</Link>
+                <Link to="/funcionamento">Funcionamento</Link>
               </li>
               <li className="hover:text-DarkBlue">
-                <Link to='/integrantes'>Integrantes</Link>
+                <Link to="/integrantes">Integrantes</Link>
               </li>
               <li className="hover:text-DarkBlue">
-                <Link to='/artigo'>Artigo</Link>
+                <Link to="/artigo">Artigo</Link>
               </li>
               <li className="hover:text-DarkBlue">
                 <Link to='/videos'>Vídeos</Link>
@@ -63,23 +68,25 @@ export default function App() {
         </div>
       </header>
 
-      {/* Main Section */}
+      {/* Main Content - Lista de Vídeos */}
       <main className="bg-blue-900 text-white flex-1 py-12 md:py-20">
-        <div className="container mx-auto flex flex-col-reverse md:flex-row items-center px-4 md:px-8 max-w-7xl">
-          {/* Text Section */}
-          <div className="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
-            <h1 className="text-3xl md:text-5xl font-bold mb-6 md:mb-12 text-WhiteHeader uppercase mt-4">
-              Botão de Emergência para Idosos
-            </h1>
-            <p className="text-sm md:text-lg leading-relaxed text-WhiteHeader">
-              Com o botão de socorro, queremos evitar o sofrimento contínuo gerado pelo cuidador. Com isso, nosso dispositivo irá comunicar as autoridades ou o responsável sobre a agressão sofrida. Dito isso, queremos o bem-estar e a integridade física dos nossos idosos.
-            </p>
-          </div>
-
-          {/* Image Section */}
-          <div className="md:w-1/2 flex justify-center md:justify-end">
-            <img src={mainImage} alt="Botão de Emergência" className="w-full max-w-xs md:max-w-md" />
-          </div>
+        <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 text-center flex  md:text-left text-WhiteHeader">Vídeos</h2>
+          <ul className="space-y-6">
+            {videoList.map((video) => (
+              <li key={video.id} className="border rounded-lg p-4 md:p-6 shadow hover:shadow-lg transition bg-WhiteHeader text-DarkBlue">
+                <h3 className="text-lg md:text-2xl font-semibold mb-2">{video.title}</h3>
+                <a
+                  href={video.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline text-sm md:text-base"
+                >
+                  Assista ao vídeo
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </main>
     </div>

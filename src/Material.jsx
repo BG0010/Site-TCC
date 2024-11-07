@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import logo from './assets/logo.svg';
-import component1 from './assets/arduino.jpeg'; // substitua com o caminho real
-import component2 from './assets/gps.jpeg'; // substitua com o caminho real
-import component3 from './assets/botao.jpeg'; // substitua com o caminho real
-import component4 from './assets/bluetooth.jpeg'; // substitua com o caminho real
+import component1 from './assets/arduino.jpeg'; 
+import component2 from './assets/gps.jpeg'; 
+import component3 from './assets/botao.jpeg'; 
+import component4 from './assets/bluetooth.jpeg';
+import component5 from './assets/acelerometro.png'
 
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -74,6 +75,9 @@ export default function Material() {
               <li className="hover:text-DarkBlue">
                 <Link to='/artigo'>Artigo</Link>
               </li>
+              <li className="hover:text-DarkBlue">
+                <Link to='/videos'>Vídeos</Link>
+              </li>
             </ul>
           </nav>
         </div>
@@ -90,6 +94,7 @@ export default function Material() {
               <li>Módulo GPS NEO-6M com antena;</li>
               <li>Chave Botão PBS-29;</li>       
               <li>Módulo Bluetooth HC-05;</li>
+              <li>Acelerômetro.</li>
             </ul>
           </div>
 
@@ -107,6 +112,9 @@ export default function Material() {
               </div>
               <div>
                 <img src={component4} alt="Componente 4" className="w-full h-128 object-cover" />
+              </div>
+              <div>
+                <img src={component5} alt="Componente 4" className="w-full h-128 object-cover" />
               </div>
             </Slider>
           </div>

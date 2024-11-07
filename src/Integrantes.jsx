@@ -13,7 +13,7 @@ const integrantes = [
   },
   {
     nome: "Vinicius Borges",
-    idade: 17,
+    idade: 18,
     frase: "Trabalhe em silêncio e deixe seu sucesso fazer o barulho.",
     linkedin: "vinicius-borges-9644302b7",
     instagram: "borginhooo0",
@@ -82,6 +82,9 @@ const Integrantes = () => {
               </li>
               <li className="hover:text-DarkBlue">
                 <Link to='/artigo'>Artigo</Link>
+              </li>
+              <li className="hover:text-DarkBlue">
+                <Link to='/videos'>Vídeos</Link>
               </li>
             </ul>
           </nav>

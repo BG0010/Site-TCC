@@ -57,6 +57,9 @@ export default function Funcionamento() {
               <li className="hover:text-DarkBlue">
                 <Link to="/artigo">Artigo</Link>
               </li>
+              <li className="hover:text-DarkBlue">
+                <Link to='/videos'>Vídeos</Link>
+              </li>
             </ul>
           </nav>
         </div>
